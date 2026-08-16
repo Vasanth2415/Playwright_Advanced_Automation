@@ -1,0 +1,41 @@
+{
+  "validUser": {
+    "username": "Admin",
+    "password": "admin123"
+  },
+
+  "invalidUser": {
+    "username": "InvalidUser",
+    "password": "InvalidPassword"
+  },
+
+  "validUsernameInvalidPassword": {
+    "username": "Admin",
+    "password": "wrongPassword"
+  },
+
+  "invalidUsernameValidPassword": {
+    "username": "InvalidUser",
+    "password": "admin123"
+  },
+
+  "emptyUsername": {
+    "username": "",
+    "password": "admin123"
+  },
+
+  "emptyPassword": {
+    "username": "Admin",
+    "password": ""
+  },
+
+  "emptyCredentials": {
+    "username": "",
+    "password": ""
+  },
+
+  "specialCharacterUsername": {
+    "username": "@#$%^&*",
+    "password": "admin123"
+  }
+}
