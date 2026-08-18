@@ -1,0 +1,35 @@
+{
+  "validEmployee": {
+    "firstName": "John",
+    "middleName": "Michael",
+    "lastName": "Doe"
+  },
+  "employeeWithoutMiddleName": {
+    "firstName": "Test",
+    "middleName": "",
+    "lastName": "Employee"
+  },
+  "specialCharacterEmployee": {
+    "firstName": "@John",
+    "middleName": "#Test",
+    "lastName": "$Employee"
+  },
+  "numericEmployee": {
+    "firstName": "12345",
+    "middleName": "67890",
+    "lastName": "11111"
+  },
+  "longEmployeeName": {
+    "firstName": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "middleName": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    "lastName": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+  },
+  "employeeSearch": {
+    "name": "John",
+    "employeeId": "0001"
+  },
+  "invalidSearch": {
+    "name": "EmployeeThatDoesNotExist",
+    "employeeId": "999999999"
+  }
+}

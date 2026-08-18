@@ -7,6 +7,11 @@ const test = base.extend({
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
    await use(loginPage);
+  },
+
+  pimPage: async ({ page }, use) => {
+    const pimPage = new PimPage(page);
+    await use(pimPage);
   }
 
 });

@@ -8,7 +8,7 @@ class LoginPage {
     }
 
     async goto() {
-        await this.page.goto('/web/index.php/auth/login');
+        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
     }
 
     async enterUsername(username) {
@@ -38,16 +38,16 @@ class LoginPage {
         return await this.locators.passwordInput.inputValue();
     }
 
-    async isLoginButtonVisible() {
-        return await this.locators.loginButton.isVisible();
-    }
-
     async isUsernameVisible() {
         return await this.locators.usernameInput.isVisible();
     }
 
     async isPasswordVisible() {
         return await this.locators.passwordInput.isVisible();
+    }
+
+     async isLoginButtonVisible() {
+        return await this.locators.loginButton.isVisible();
     }
 
     async isForgotPasswordVisible() {
