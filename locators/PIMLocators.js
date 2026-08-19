@@ -1,4 +1,4 @@
-class pimLocators {
+class PIMLocators {
   constructor(page) {
     this.page = page;
 

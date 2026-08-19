@@ -1,6 +1,6 @@
 const PIMLocators = require('../locators/PIMLocators');
 
-class PimPage{
+class PIMPage{
 
     constructor(page){
         this.page = page;
@@ -11,6 +11,7 @@ class PimPage{
 async goto(){
     await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList');
 }
+
 
 // Open PIM from Dashboard Page
 async openPIM(){
@@ -45,7 +46,7 @@ async resetSearch(){
 }
 
 // Click Add Button
-async clickAddButton(){
+async clickAdd(){
     await this.locators.addButton.click();
 }
 
@@ -71,6 +72,7 @@ async addEmployee(firstName, middleName, lastName){
         await this.enterMiddleName(middleName);
     }
     await this.enterLastName(lastName);
+    await this.locators.employeeIDInput.clear(); 
     await this.locators.saveButton.click();
 }
 
@@ -91,4 +93,4 @@ async getEmployeeRows(){
 
 }
 
-module.exports = PimPage;
+module.exports = PIMPage;

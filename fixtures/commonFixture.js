@@ -1,6 +1,7 @@
 const {test: base} = require('@playwright/test');
 
 const LoginPage = require('../pages/LoginPage');
+const PimPage = require('../pages/PIMPage'); 
 
 const test = base.extend({
 
