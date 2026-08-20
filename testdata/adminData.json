@@ -1,0 +1,118 @@
+{
+  "validUser": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "TestAdminUser",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "validESSUser": {
+    "role": "ESS",
+    "employeeName": "Paul Collings",
+    "username": "TestESSUser",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "invalidUsername": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "InvalidUser123",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "emptyUsername": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "emptyPassword": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "TestAdminUser",
+    "password": "",
+    "confirmPassword": ""
+  },
+
+  "emptyEmployeeName": {
+    "role": "Admin",
+    "employeeName": "",
+    "username": "TestAdminUser",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "emptyRole": {
+    "role": "",
+    "employeeName": "Paul Collings",
+    "username": "TestAdminUser",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "passwordMismatch": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "TestAdminUser",
+    "password": "Admin@123",
+    "confirmPassword": "Different@123"
+  },
+
+  "specialCharacterUser": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "@#$%^&*",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "numericUsername": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "1234567890",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "longUsername": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "password": "Admin@123",
+    "confirmPassword": "Admin@123"
+  },
+
+  "longPassword": {
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "username": "LongPasswordUser",
+    "password": "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP",
+    "confirmPassword": "PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP"
+  },
+
+  "validSearch": {
+    "username": "Admin",
+    "role": "Admin",
+    "employeeName": "Paul Collings",
+    "status": "Enabled"
+  },
+
+  "invalidSearch": {
+    "username": "UserDoesNotExist12345",
+    "employeeName": "EmployeeDoesNotExist",
+    "status": "Enabled"
+  },
+
+  "searchByRole": {
+    "role": "Admin"
+  },
+
+  "searchByStatus": {
+    "status": "Enabled"
+  }
+}
