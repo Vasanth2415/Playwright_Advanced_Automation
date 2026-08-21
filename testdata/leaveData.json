@@ -1,0 +1,158 @@
+{
+  "validAssignLeave": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-01",
+    "toDate": "2026-09-02",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Vacation leave"
+  },
+  "singleDayLeave": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-05",
+    "toDate": "2026-09-05",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Single day leave"
+  },
+
+  "multiDayLeave": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-10",
+    "toDate": "2026-09-15",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Multiple day vacation"
+  },
+
+  "partialDayMorning": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-18",
+    "toDate": "2026-09-18",
+    "partialDays": "Start Day Only",
+    "duration": "Half Day - Morning",
+    "comment": "Morning half-day leave"
+  },
+
+  "partialDayAfternoon": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-19",
+    "toDate": "2026-09-19",
+    "partialDays": "Start Day Only",
+    "duration": "Half Day - Afternoon",
+    "comment": "Afternoon half-day leave"
+  },
+ "invalidEmployee": {
+    "employeeName": "EmployeeDoesNotExist12345",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-20",
+    "toDate": "2026-09-21",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Invalid employee test"
+  },
+  "emptyEmployee": {
+    "employeeName": "",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-22",
+    "toDate": "2026-09-23",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Employee missing"
+  },
+  "emptyLeaveType": {
+    "employeeName": "Paul Collings",
+    "leaveType": "",
+    "fromDate": "2026-09-24",
+    "toDate": "2026-09-25",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Leave type missing"
+},
+ "emptyFromDate": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "",
+    "toDate": "2026-09-26",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "From date missing"
+  },
+  "emptyToDate": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-26",
+    "toDate": "",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "To date missing"
+  },
+  "invalidDateRange": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-09-30",
+    "toDate": "2026-09-20",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "To date earlier than from date"
+  },
+  "sameDate": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-10-01",
+    "toDate": "2026-10-01",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "Same from and to date"
+  },
+  "specialCharacterComment": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-10-05",
+    "toDate": "2026-10-06",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "@#$%^&*()_+-=[]{}|;:',.<>?/!"
+  },
+  "numericComment": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-10-07",
+    "toDate": "2026-10-08",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "1234567890"
+  },
+  "longComment": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-10-10",
+    "toDate": "2026-10-11",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "This is a long comment used to validate the maximum text length and boundary behavior of the Assign Leave comment field in the OrangeHRM application."
+  },
+  "whitespaceComment": {
+    "employeeName": "Paul Collings",
+    "leaveType": "US - Vacation",
+    "fromDate": "2026-10-12",
+    "toDate": "2026-10-13",
+    "partialDays": "All Days",
+    "duration": "Full Day",
+    "comment": "     "
+  },
+  "emptyForm": {
+    "employeeName": "",
+    "leaveType": "",
+    "fromDate": "",
+    "toDate": "",
+    "partialDays": "",
+    "duration": "",
+    "comment": ""
+    }
+}

@@ -183,20 +183,290 @@ test.describe('OrangeHRM Admin Module', () => {
         await expect(adminPage.locators.confirmPasswordInput).toHaveValue('');
     });
 
+    // Password Assertion
+
+    test('TC028 - Verify Password Type', async ({ adminPage }) => {
+        await adminPage.clickAdd();
+        const type = await adminPage.getPasswordInputType();
+        expect(type).toBe('password');
+    });
+
+    // Positive - Add User
+    test('TC029 - Add User with Valid Data', async ({ adminPage, page }) => {
+        await adminPage.clickAdd();
+        await adminPage.addUser({
+            role: adminData.validUser.role,
+            employeeName:
+                adminData.validUser.employeeName,
+            username:
+                adminData.validUser.username,
+            password:
+                adminData.validUser.password,
+            confirmPassword:
+                adminData.validUser.confirmPassword
+        });
+
+        await expect(page).toHaveURL(/admin\/viewSystemUsers/);
+
+    });
+
+
+    // Positive ESS User
+
+    test('TC030 - Add ESS User with Valid Data', async ({ adminPage, page }) => {
+        await adminPage.clickAdd();
+        await adminPage.addUser({
+            role: adminData.validESSUser.role,
+            employeeName:
+                adminData.validESSUser.employeeName,
+            username:
+                adminData.validESSUser.username,
+            password:
+                adminData.validESSUser.password,
+            confirmPassword:
+                adminData.validESSUser.confirmPassword
+        });
+
+        await expect(page).toHaveURL(
+            /admin\/viewSystemUsers/
+        );
+    });
 
 
 
+    // Negative Empty User Name
+
+    test('TC031 - Add User With Empty Username', async ({adminPage,page}) => {
+
+        await adminPage.clickAdd();
+        await adminPage.addUser({
+            role: adminData.emptyUsername.role,
+
+            employeeName:
+                adminData.emptyUsername.employeeName,
+
+            username:
+                adminData.emptyUsername.username,
+
+            password:
+                adminData.emptyUsername.password,
+
+            confirmPassword:
+                adminData.emptyUsername.confirmPassword
+        });
+
+        await expect(page).not.toHaveURL(
+            /admin\/viewSystemUsers/
+        );
+    });
+
+    // Empty Password
+
+    test('TC032 - Add User With Empty Password', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.emptyPassword.role,
+      employeeName:
+        adminData.emptyPassword.employeeName,
+
+      username:
+        adminData.emptyPassword.username,
+
+      password:
+        adminData.emptyPassword.password,
+
+      confirmPassword:
+        adminData.emptyPassword.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+  // Empty Employee
+
+  test('TC033 - Add User Without Employee Name', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.emptyEmployeeName.role,
+
+      employeeName:
+        adminData.emptyEmployeeName.employeeName,
+
+      username:
+        adminData.emptyEmployeeName.username,
+
+      password:
+        adminData.emptyEmployeeName.password,
+
+      confirmPassword:
+        adminData.emptyEmployeeName.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+  // Empty Role
+
+   test('TC034 - Add User Without Role', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.emptyRole.role,
+
+      employeeName:
+        adminData.emptyRole.employeeName,
+
+      username:
+        adminData.emptyRole.username,
+
+      password:
+        adminData.emptyRole.password,
+
+      confirmPassword:
+        adminData.emptyRole.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+// Password mismatch
+test('TC035 - Password And Confirm Password Mismatch', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.passwordMismatch.role,
+
+      employeeName:
+        adminData.passwordMismatch.employeeName,
+
+      username:
+        adminData.passwordMismatch.username,
+
+      password:
+        adminData.passwordMismatch.password,
+
+      confirmPassword:
+        adminData.passwordMismatch.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+// Negative - All Empty
+  test('TC036 - Add User With All Fields Empty', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.locators.saveButton.click();
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+// Edge Special Characters
+test('TC037 - Username With Special Characters', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.specialCharacterUser.role,
+
+      employeeName:
+        adminData.specialCharacterUser.employeeName,
+
+      username:
+        adminData.specialCharacterUser.username,
+
+      password:
+        adminData.specialCharacterUser.password,
+
+      confirmPassword:
+        adminData.specialCharacterUser.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
 
 
+// Edge Numeric User Name
 
+test('TC038 - Numeric Username', async ({adminPage,page}) => {
 
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.numericUsername.role,
 
+      employeeName:
+        adminData.numericUsername.employeeName,
 
+      username:
+        adminData.numericUsername.username,
 
+      password:
+        adminData.numericUsername.password,
 
+      confirmPassword:
+        adminData.numericUsername.confirmPassword
+    });
 
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
 
+// Edge - Long Username
+test('TC039 - Very Long Username', async ({adminPage,page}) => {
 
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.longUsername.role,
+
+      employeeName:
+        adminData.longUsername.employeeName,
+
+      username:
+        adminData.longUsername.username,
+
+      password:
+        adminData.longUsername.password,
+
+      confirmPassword:
+        adminData.longUsername.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+// Edge - Long Password
+ test('TC040 - Very Long Password', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.addUser({
+      role: adminData.longPassword.role,
+
+      employeeName:
+        adminData.longPassword.employeeName,
+
+      username:
+        adminData.longPassword.username,
+
+      password:
+        adminData.longPassword.password,
+
+      confirmPassword:
+        adminData.longPassword.confirmPassword
+    });
+
+    await expect(page).not.toHaveURL(/admin\/viewSystemUsers/);
+  });
+
+// Cancel Add User
+test('TC041 - Cancel Add User', async ({adminPage,page}) => {
+
+    await adminPage.clickAdd();
+    await adminPage.enterUsername(
+      adminData.validUser.username);
+
+    await adminPage.cancelAddUser();
+
+    await expect(page).not.toHaveURL(/admin\/saveSystemUser/);
+  });
 
 
 });
