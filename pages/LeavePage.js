@@ -3,7 +3,6 @@ const LeaveLocators = require('../locators/LeaveLocators');
 class LeavePage {
 
     constructor(page) {
-
         this.page = page;
         this.locators = new LeaveLocators(page);
     }
@@ -124,12 +123,6 @@ async isAssignButtonEnabled(){
 async isCancelButtonEnabled(){
     return await this.locators.cancelButton.isEnabled();
 }
-
-
-
-
-
-
 
 }
 

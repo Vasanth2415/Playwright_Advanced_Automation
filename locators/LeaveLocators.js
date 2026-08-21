@@ -62,3 +62,4 @@ class LeaveLocators {
 
     }
 }
+module.exports = LeaveLocators;
