@@ -113,16 +113,16 @@ class LeavePage {
 
     }
 
-// Verify Assign Button
-async isAssignButtonEnabled(){
-    return await this.locators.assignButton.isEnabled();
-}
+    // Verify Assign Button
+    async isAssignButtonEnabled() {
+        return await this.locators.assignButton.isEnabled();
+    }
 
 
-// Verify Cancel Button
-async isCancelButtonEnabled(){
-    return await this.locators.cancelButton.isEnabled();
-}
+    // Verify Cancel Button
+    async isCancelButtonEnabled() {
+        return await this.locators.cancelButton.isEnabled();
+    }
 
 }
 
